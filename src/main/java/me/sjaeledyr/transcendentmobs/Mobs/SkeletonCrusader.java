@@ -16,35 +16,29 @@ import org.bukkit.plugin.java.JavaPlugin;
 import me.sjaeledyr.transcendentmobs.util.killCounter;
 import me.sjaeledyr.transcendentmobs.Settings.TMobRoles;
 
-public class SkeletonCrusader extends JavaPlugin implements Listener {
+public class SkeletonCrusader extends JavaPlugin {
     killCounter kc = new killCounter();
-    @EventHandler
-    public void onSkeletonDeath(EntityDeathEvent e) {
+    
+    public void skeletonDeathHandler(EntityDeathEvent e) {
         Entity entity = e.getEntity();
         Player p = e.getEntity().getKiller();;
         // Spawn Location
         Location spawnLoc = p.getLocation().add(2,0,0);
         World world = p.getWorld();
-        if (entity instanceof Skeleton) {
-           kc.addKill(p, 1);
-            // Spawn Condition
-            if (kc.getKills(p) >= 3) {
-                p.sendMessage("Testing!");
-                Skeleton skeleton = (Skeleton) world.spawnEntity(spawnLoc, EntityType.SKELETON);
-                skeleton.setCustomName("Skeleton Crusader");
-                skeleton.setCustomNameVisible(true);
-                // Skeleton Crusader Gear
-                skeleton.getEquipment().setItemInMainHand(new ItemStack(Material.DIAMOND_AXE));
-                skeleton.getEquipment().setHelmet(new ItemStack(Material.GOLDEN_HELMET));
-                skeleton.getEquipment().setChestplate(new ItemStack(Material.GOLDEN_CHESTPLATE));
-                skeleton.getEquipment().setLeggings(new ItemStack(Material.GOLDEN_LEGGINGS));
-                skeleton.getEquipment().setBoots(new ItemStack(Material.GOLDEN_BOOTS));
-                kc.resetKills(p);
-            }
+        kc.addKill(p, 1);
+        // Skeleton Crusader spawn condition
+        if (kc.getKills(p) >= 3) {
+            p.sendMessage("Testing!");
+            Skeleton skeleton = (Skeleton) world.spawnEntity(spawnLoc, EntityType.SKELETON);
+            skeleton.setCustomName("Skeleton Crusader");
+            skeleton.setCustomNameVisible(true);
+            // Skeleton Crusader Gear
+            skeleton.getEquipment().setItemInMainHand(new ItemStack(Material.DIAMOND_AXE));
+            skeleton.getEquipment().setHelmet(new ItemStack(Material.GOLDEN_HELMET));
+            skeleton.getEquipment().setChestplate(new ItemStack(Material.GOLDEN_CHESTPLATE));
+            skeleton.getEquipment().setLeggings(new ItemStack(Material.GOLDEN_LEGGINGS));
+            skeleton.getEquipment().setBoots(new ItemStack(Material.GOLDEN_BOOTS));
+            kc.resetKills(p);
         }
-    }
-    @EventHandler
-    public void onDamage (EntityDamageByEntityEvent e) {
-
     }
 }
