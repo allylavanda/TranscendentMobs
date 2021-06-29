@@ -13,19 +13,21 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
+import me.sjaeledyr.transcendentmobs.util.killCounter;
 
 public class SkeletonCrusader extends JavaPlugin implements Listener {
+    killCounter kc = new killCounter();
     @EventHandler
     public void onSkeletonDeath(EntityDeathEvent e) {
         Entity entity = e.getEntity();
-        int playerKills = 0;
+        Player p = e.getEntity().getKiller();;
         // Spawn Location
-        Location spawnLoc = Player.getLocation().add(2,0,0);
-        World world = Player.getWorld();
+        Location spawnLoc = p.getLocation().add(2,0,0);
+        World world = p.getWorld();
         if (entity instanceof Skeleton) {
-            playerKills = playerKills + 1;
+           kc.addKill(p, 1);
             // Spawn Condition
-            if (playerKills >= 20) {
+            if (kc.getKills(p) >= 20) {
                 Skeleton skeleton = (Skeleton) world.spawnEntity(spawnLoc, EntityType.SKELETON);
                 skeleton.setCustomName("Skeleton Crusader");
                 skeleton.setCustomNameVisible(true);
@@ -35,6 +37,7 @@ public class SkeletonCrusader extends JavaPlugin implements Listener {
                 skeleton.getEquipment().setChestplate(new ItemStack(Material.GOLDEN_CHESTPLATE));
                 skeleton.getEquipment().setLeggings(new ItemStack(Material.GOLDEN_LEGGINGS));
                 skeleton.getEquipment().setBoots(new ItemStack(Material.GOLDEN_BOOTS));
+                kc.resetKills(p);
             }
         }
     }
