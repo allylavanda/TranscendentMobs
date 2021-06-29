@@ -1,7 +1,0 @@
-name: TranscendentMobs
-version: 1.0-SNAPSHOT
-main: me.sjaeledyr.transcendentmobs.Main
-api-version: 1.16
-authors: [ Sjaeledyr ]
-description: Spiritual successor to Hepolite's MalevolentMobs
-website: https://github.com/sjaeledyr
