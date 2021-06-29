@@ -12,9 +12,8 @@ public final class Main extends JavaPlugin {
         System.out.println("[TranscendentMobs] TranscendentMobs by Sjaeledyr has been Loaded! ");
         System.out.println("Plugin Version 1.0");
 
-        // TranscendentMobs Classes
-        getServer().getPluginManager().registerEvents(new SkeletonCrusader(), this);
-        getServer().getPluginManager().registerEvents(new killCounter), this;
+        // Set up event listener
+        getServer().getPluginManager().registerEvents(new SpigotListener(), this);
     }
     @Override
     public void onDisable() {
