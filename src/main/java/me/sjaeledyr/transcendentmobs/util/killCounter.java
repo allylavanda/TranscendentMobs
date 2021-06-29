@@ -23,7 +23,7 @@ public class killCounter extends JavaPlugin {
         cfg.set(p.getName() + "." + "kills", a+i);
         this.saveConfig();
     }
-    public int getKills(Player p,) {
+    public int getKills(Player p) {
         return cfg.getInt(p.getName() + "." + "kills");
     }
     public void resetKills(Player p) {
