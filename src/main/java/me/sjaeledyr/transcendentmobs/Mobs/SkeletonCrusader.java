@@ -22,12 +22,12 @@ public class SkeletonCrusader extends JavaPlugin {
     public void skeletonDeathHandler(EntityDeathEvent e) {
         Entity entity = e.getEntity();
         Player p = e.getEntity().getKiller();;
-        // Spawn Location
-        Location spawnLoc = p.getLocation().add(2,0,0);
-        World world = p.getWorld();
         kc.addKill(p, 1);
         // Skeleton Crusader spawn condition
         if (kc.getKills(p) >= 3) {
+            // Spawn Location
+            Location spawnLoc = p.getLocation().add(2,0,0);
+            World world = p.getWorld();
             p.sendMessage("Testing!");
             Skeleton skeleton = (Skeleton) world.spawnEntity(spawnLoc, EntityType.SKELETON);
             skeleton.setCustomName("Skeleton Crusader");
