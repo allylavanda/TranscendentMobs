@@ -14,6 +14,7 @@ public final class Main extends JavaPlugin {
 
         // Set up event listener
         getServer().getPluginManager().registerEvents(new SpigotListener(), this);
+        config.set("test", true);
     }
     @Override
     public void onDisable() {
