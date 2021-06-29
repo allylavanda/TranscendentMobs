@@ -14,7 +14,7 @@ public class Main extends JavaPlugin {
         System.out.println("Plugin Version 1.0");
 
         // Set up event listener
-        getServer().getPluginManager().registerEvents(new SpigotListener(), this);
+        getServer().getPluginManager().registerEvents(new EventListener(), this);
         config.set("test", true);
     }
     @Override
