@@ -10,7 +10,7 @@ public class killCounter extends JavaPlugin {
     public void onJoin(PlayerJoinEvent e ) {
         Player p = e.getPlayer();
         if (!(cfg.contains(p.getName()))) {
-            cfg.set(p.getName() + "." + "kills");
+            cfg.set(p.getName() + "." + "kills", 0);
             this.saveConfig();
         }
         else {
