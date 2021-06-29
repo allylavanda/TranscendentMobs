@@ -3,7 +3,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import me.sjaeledyr.transcendentmobs.Mobs.SkeletonCrusader;
 
-public class SpigotListener implements Listener {
+public class MyListener implements Listener {
   FileConfiguration cfg = this.getConfig();
   SkeletonCrusader sr = new SkeletonCrusader();
   
