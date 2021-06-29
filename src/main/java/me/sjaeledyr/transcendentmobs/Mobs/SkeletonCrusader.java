@@ -28,6 +28,7 @@ public class SkeletonCrusader extends JavaPlugin implements Listener {
            kc.addKill(p, 1);
             // Spawn Condition
             if (kc.getKills(p) >= 20) {
+                p.sendMessage("Testing!");
                 Skeleton skeleton = (Skeleton) world.spawnEntity(spawnLoc, EntityType.SKELETON);
                 skeleton.setCustomName("Skeleton Crusader");
                 skeleton.setCustomNameVisible(true);
