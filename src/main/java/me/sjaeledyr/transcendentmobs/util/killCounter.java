@@ -7,16 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class killCounter extends JavaPlugin {
     FileConfiguration cfg = this.getConfig();
-    public void onJoin(PlayerJoinEvent e ) {
-        Player p = e.getPlayer();
-        if (!(cfg.contains(p.getName()))) {
-            cfg.set(p.getName() + "." + "kills", 0);
-            this.saveConfig();
-        }
-        else {
-            return;
-        }
-    }
+    
     public void addKill(Player p, int count) {
         int i = cfg.getInt(p.getName() + "." + "kills");
         int a = count;
