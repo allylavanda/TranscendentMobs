@@ -13,7 +13,7 @@ import me.sjaeledyr.transcendentmobs.util.killCounter;
 
 public class SkeletonCrusader {
     killCounter kc = new killCounter();
-    
+
     public void skeletonDeathHandler(EntityDeathEvent e) {
         Entity entity = e.getEntity();
         Player p = e.getEntity().getKiller();;
@@ -27,6 +27,9 @@ public class SkeletonCrusader {
             Skeleton skeleton = (Skeleton) world.spawnEntity(spawnLoc, EntityType.SKELETON);
             skeleton.setCustomName("Skeleton Crusader");
             skeleton.setCustomNameVisible(true);
+            // Attributes
+            skeleton.setMaxHealth(40);
+            skeleton.setHealth(40);
             // Skeleton Crusader Gear
             skeleton.getEquipment().setItemInMainHand(new ItemStack(Material.DIAMOND_AXE));
             skeleton.getEquipment().setHelmet(new ItemStack(Material.GOLDEN_HELMET));
