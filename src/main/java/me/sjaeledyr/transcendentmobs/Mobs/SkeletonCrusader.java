@@ -3,6 +3,7 @@ package me.sjaeledyr.transcendentmobs.Mobs;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -28,7 +29,7 @@ public class SkeletonCrusader {
             skeleton.setCustomName("Skeleton Crusader");
             skeleton.setCustomNameVisible(true);
             // Attributes
-            skeleton.setMaxHealth(40);
+            skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(40);
             skeleton.setHealth(40);
             // Skeleton Crusader Gear
             skeleton.getEquipment().setItemInMainHand(new ItemStack(Material.DIAMOND_AXE));
