@@ -4,6 +4,7 @@ import me.sjaeledyr.transcendentmobs.util.killCounter;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -27,6 +28,9 @@ public class ZombieWarrior {
             Zombie zombie = (Zombie) world.spawnEntity(spawnLoc, EntityType.ZOMBIE);
             zombie.setCustomName("Zombie Warrior");
             zombie.setCustomNameVisible(true);
+            // Attributes
+            zombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(100);
+            zombie.setHealth(100);
             // Zombie Warrior Gear
             zombie.getEquipment().setItemInMainHand(new ItemStack(Material.IRON_AXE));
             zombie.getEquipment().setHelmet(new ItemStack(Material.DIAMOND_HELMET));
