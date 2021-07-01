@@ -36,19 +36,19 @@ public class EventListener implements Listener {
     }
     @EventHandler
     public void entityDeathSkeleton(EntityDeathEvent e) {
-        if (e.getEntity() instanceof Skeleton) {
+        if (e.getEntity().getKiller() instanceof Player) { if (e.getEntity() instanceof Skeleton)
             sc.skeletonDeathHandler(e);
         }
     }
     @EventHandler
     public void entityDeathZombie(EntityDeathEvent e) {
-        if (e.getEntity() instanceof Zombie) {
+        if (e.getEntity().getKiller() instanceof Player) { if (e.getEntity() instanceof Zombie)
             zw.zombieDeathHandler(e);
         }
     }
     @EventHandler
     public void entityDeathSpider(EntityDeathEvent e) {
-        if (e.getEntity() instanceof Spider) {
+        if (e.getEntity().getKiller() instanceof Player) { if (e.getEntity() instanceof Spider)
             sw.spiderDeathHandler(e);
         }
     }
