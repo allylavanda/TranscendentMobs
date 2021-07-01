@@ -1,8 +1,6 @@
 package me.sjaeledyr.transcendentmobs.Mobs;
 
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.World;
+import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -11,13 +9,15 @@ import org.bukkit.entity.Skeleton;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.inventory.ItemStack;
 import me.sjaeledyr.transcendentmobs.util.killCounter;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class SkeletonCrusader {
     killCounter kc = new killCounter();
 
     public void skeletonDeathHandler(EntityDeathEvent e) {
         Entity entity = e.getEntity();
-        Player p = e.getEntity().getKiller();;
+        Player p = e.getEntity().getKiller();
         kc.addKillSkeleton(p, 1);
         // Skeleton Crusader spawn condition
         if (kc.getKillsSkeleton(p) >= 3) {
@@ -32,6 +32,8 @@ public class SkeletonCrusader {
             skeleton.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 300000000, 1));
             skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(40);
             skeleton.setHealth(40);
+            //Particle Effects
+            world.spawnParticle(Particle.EXPLOSION_HUGE, skeleton.getLocation(), 1);
             // Skeleton Crusader Gear
             skeleton.getEquipment().setItemInMainHand(new ItemStack(Material.DIAMOND_AXE));
             skeleton.getEquipment().setHelmet(new ItemStack(Material.GOLDEN_HELMET));
