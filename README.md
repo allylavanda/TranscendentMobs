@@ -1,3 +1,2 @@
 # TranscendentMobs
-Spiritual Successor to Hepolite's MalevolentMobs
-Depents on NBTAPI
+Spiritual Successor to Hepolite's MalevolentMobs It Just Wworks.
