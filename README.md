@@ -1,2 +1,2 @@
 # TranscendentMobs
-Spiritual Successor to Hepolite's MalevolentMobs It Just Wworks.
+Spiritual Successor to Hepolite's MalevolentMobs. It Just Wworks.
