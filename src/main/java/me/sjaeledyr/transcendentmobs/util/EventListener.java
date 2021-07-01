@@ -2,14 +2,16 @@ package me.sjaeledyr.transcendentmobs.util;
 
 import me.sjaeledyr.transcendentmobs.Main;
 import me.sjaeledyr.transcendentmobs.Mobs.ZombieWarrior;
+import me.sjaeledyr.transcendentmobs.Mobs.SkeletonCrusader;
+import me.sjaeledyr.transcendentmobs.Mobs.SpiderWeaver;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Skeleton;
+import org.bukkit.entity.Spider;
 import org.bukkit.entity.Zombie;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import me.sjaeledyr.transcendentmobs.Mobs.SkeletonCrusader;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 
@@ -19,6 +21,7 @@ public class EventListener implements Listener {
     FileConfiguration cfg = main.getConfig();
     SkeletonCrusader sc = new SkeletonCrusader();
     ZombieWarrior zw = new ZombieWarrior();
+    SpiderWeaver sw = new SpiderWeaver();
 
     @EventHandler
     public void onJoin(PlayerJoinEvent e ) {
@@ -43,10 +46,13 @@ public class EventListener implements Listener {
             zw.zombieDeathHandler(e);
         }
     }
-
+    @EventHandler
+    public void entityDeathSpider(EntityDeathEvent e) {
+        if (e.getEntity() instanceof Spider) {
+            sw.spiderDeathHandler(e);
+        }
+    }
     @EventHandler
     public void onDamage (EntityDamageByEntityEvent e) {
-
     }
-
 }
