@@ -29,6 +29,7 @@ public class SkeletonCrusader {
             skeleton.setCustomName("Skeleton Crusader");
             skeleton.setCustomNameVisible(true);
             // Attributes
+            skeleton.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 300000000, 1));
             skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(40);
             skeleton.setHealth(40);
             // Skeleton Crusader Gear
