@@ -35,7 +35,7 @@ public class killCounter {
         main.saveConfig();
     }
     public void addKillSpider(Player p, int count) {
-        int i = cfg.getInt(p.getName() + "." + "spider kills")
+        int i = cfg.getInt(p.getName() + "." + "spider kills");
         int a = count;
         cfg.set(p.getName() + "." + "spider kills", a + i);
         main.saveConfig();
