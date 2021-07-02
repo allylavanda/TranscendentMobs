@@ -1,5 +1,6 @@
 package me.sjaeledyr.transcendentmobs.Mobs;
 
+import me.sjaeledyr.transcendentmobs.Loot.Weapons;
 import me.sjaeledyr.transcendentmobs.util.killCounter;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -32,11 +33,14 @@ public class ZombieWarrior {
             zombie.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(100);
             zombie.setHealth(100);
             // Zombie Warrior Gear
-            zombie.getEquipment().setItemInMainHand(new ItemStack(Material.IRON_AXE));
+            zombie.getEquipment().setItemInMainHand(Weapons.warriorsAxe);
             zombie.getEquipment().setHelmet(new ItemStack(Material.DIAMOND_HELMET));
             zombie.getEquipment().setChestplate(new ItemStack(Material.IRON_CHESTPLATE));
             zombie.getEquipment().setLeggings(new ItemStack(Material.IRON_LEGGINGS));
             zombie.getEquipment().setBoots(new ItemStack(Material.GOLDEN_BOOTS));
+
+            // Loot
+            zombie.getEquipment().setItemInMainHandDropChance(100);
             kc.resetKillsZombie(p);
         }
     }

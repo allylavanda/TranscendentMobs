@@ -1,5 +1,6 @@
 package me.sjaeledyr.transcendentmobs.Loot;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
@@ -12,16 +13,19 @@ import java.util.List;
 import java.util.UUID;
 
 public class Weapons {
-
+    // Weapon List
     public static ItemStack testWeapon;
+    public static ItemStack warriorsAxe;
 
     public static void init() {
         createTestWeapon();
+        createWarriorsAxe();
     }
     public static void createTestWeapon() {
         ItemStack item = new ItemStack(Material.DIAMOND_AXE);
-        AttributeModifier modifier = new AttributeModifier(UUID.randomUUID(), "generic.attackDamage", 100,
-                AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND);
+        // Attributes
+        AttributeModifier modifier = new AttributeModifier(UUID.randomUUID(), "generic.attackDamage",
+                100, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND);
 
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName("This Is Gonna Hurt");
@@ -29,9 +33,27 @@ public class Weapons {
         lore.add("This is a weapon to test the plugin's");
         lore.add("functionality / for debugging");
         meta.setLore(lore);
-        // add a modifier
+        // Set Modifiers
         meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, modifier);
         item.setItemMeta(meta);
         testWeapon = item;
+    }
+    public static void createWarriorsAxe() {
+        ItemStack item = new ItemStack(Material.IRON_AXE);
+        // Attributes
+        AttributeModifier modifier = new AttributeModifier(UUID.randomUUID(),"generic.attackDamage",
+                5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND);
+
+        ItemMeta meta = item.getItemMeta();
+        // Lore
+        meta.setDisplayName("Warrior's Axe");
+        List<String> lore = new ArrayList<>();
+        lore.add("Hardy axe used by the mightiest of Warriors");
+        meta.setLore(lore);
+        // Set Modifiers
+        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, modifier);
+        item.setItemMeta(meta);
+        warriorsAxe = item;
+
     }
 }
