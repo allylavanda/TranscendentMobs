@@ -2,7 +2,6 @@ package me.sjaeledyr.transcendentmobs;
 
 import me.sjaeledyr.transcendentmobs.Loot.Weapons;
 import me.sjaeledyr.transcendentmobs.util.EventListener;
-import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 

@@ -3,17 +3,13 @@ package me.sjaeledyr.transcendentmobs.Mobs;
 import me.sjaeledyr.transcendentmobs.Loot.Weapons;
 import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
-import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Skeleton;
 import org.bukkit.event.entity.EntityDeathEvent;
-import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import me.sjaeledyr.transcendentmobs.util.killCounter;
-import org.bukkit.inventory.meta.ItemMeta;
-import java.util.UUID;
 
 public class SkeletonCrusader {
     killCounter kc = new killCounter();
