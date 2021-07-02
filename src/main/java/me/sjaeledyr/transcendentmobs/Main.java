@@ -1,5 +1,6 @@
 package me.sjaeledyr.transcendentmobs;
 
+import me.sjaeledyr.transcendentmobs.Loot.Weapons;
 import me.sjaeledyr.transcendentmobs.util.EventListener;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -12,6 +13,7 @@ public class Main extends JavaPlugin {
         config=getConfig();
         this.saveDefaultConfig();
         // Plugin startup logic
+        Weapons.init();
         System.out.println("[TranscendentMobs] TranscendentMobs by Sjaeledyr has been Loaded! ");
         System.out.println("Plugin Version 1.0");
 

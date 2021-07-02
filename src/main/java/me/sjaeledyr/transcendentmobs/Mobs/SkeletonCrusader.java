@@ -1,5 +1,6 @@
 package me.sjaeledyr.transcendentmobs.Mobs;
 
+import me.sjaeledyr.transcendentmobs.Loot.Weapons;
 import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
@@ -32,24 +33,19 @@ public class SkeletonCrusader {
             skeleton.setCustomNameVisible(true);
             skeleton.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(40);
             skeleton.setHealth(40);
+
             //Particle Effects
             world.spawnParticle(Particle.EXPLOSION_HUGE, skeleton.getLocation(), 1);
 
-            // Skeleton Crusader Gear
-            AttributeModifier modifier = new AttributeModifier(UUID.randomUUID(), "generic.attackDamage", 100,
-                    AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND);
-            ItemStack scWeapon = new ItemStack(Material.DIAMOND_AXE);
-            ItemMeta meta = scWeapon.getItemMeta();
-            // add a modifier
-            meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, modifier);
-            scWeapon.setItemMeta(meta);
-            kc.resetKillsSkeleton(p);
-
-            skeleton.getEquipment().setItemInMainHand(scWeapon);
+            skeleton.getEquipment().setItemInMainHand(Weapons.testWeapon);
             skeleton.getEquipment().setHelmet(new ItemStack(Material.GOLDEN_HELMET));
             skeleton.getEquipment().setChestplate(new ItemStack(Material.GOLDEN_CHESTPLATE));
             skeleton.getEquipment().setLeggings(new ItemStack(Material.GOLDEN_LEGGINGS));
             skeleton.getEquipment().setBoots(new ItemStack(Material.GOLDEN_BOOTS));
+
+            // Loot
+            skeleton.getEquipment().setItemInMainHandDropChance(100);
+            kc.resetKillsSkeleton(p);
         }
     }
 }
