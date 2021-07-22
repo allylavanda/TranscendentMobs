@@ -1,5 +1,6 @@
 package me.sjaeledyr.transcendentmobs.Mobs;
 
+import me.sjaeledyr.transcendentmobs.Loot.Armor;
 import me.sjaeledyr.transcendentmobs.Loot.Weapons;
 import org.bukkit.*;
 import org.bukkit.attribute.Attribute;
@@ -36,13 +37,14 @@ public class SkeletonCrusader {
             skeleton.getEquipment().setItemInMainHand(Weapons.konstanzasRapier);
             skeleton.getEquipment().setItemInOffHand(Weapons.fonteynesGreatShield);
             skeleton.getEquipment().setHelmet(new ItemStack(Material.GOLDEN_HELMET));
-            skeleton.getEquipment().setChestplate(new ItemStack(Material.GOLDEN_CHESTPLATE));
+            skeleton.getEquipment().setChestplate(Armor.testArmor);
             skeleton.getEquipment().setLeggings(new ItemStack(Material.GOLDEN_LEGGINGS));
             skeleton.getEquipment().setBoots(new ItemStack(Material.GOLDEN_BOOTS));
 
             // Loot
             skeleton.getEquipment().setItemInMainHandDropChance(100);
             skeleton.getEquipment().setItemInOffHandDropChance(100);
+            skeleton.getEquipment().setChestplateDropChance(100);
             kc.resetKillsSkeleton(p);
         }
     }

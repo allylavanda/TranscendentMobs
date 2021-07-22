@@ -59,27 +59,25 @@ public class Weapons {
         item.setItemMeta(meta);
         warriorsAxe = item;
     }
-
     // TRANSCENDENT WEAPONS
     public static void createKonstanzasRapier() {
         ItemStack item = new ItemStack(Material.DIAMOND_SWORD);
         // Attributes
         AttributeModifier damageModifier = new AttributeModifier(UUID.randomUUID(), "generic.attackDamage",
                 10, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND);
-        AttributeModifier frostModifier = new AttributeModifier(UUID.randomUUID(), "generic.slow",
-                -10, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND);
+        // AttributeModifier frostModifier = new AttributeModifier(UUID.randomUUID(), "generic.slow",
+        //        -10, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND);
 
         ItemMeta meta = item.getItemMeta();
         // Lore
         meta.setDisplayName(ChatColor.GOLD + "" + ChatColor.BOLD + "Konstanza's Rapier");
         List<String> lore = new ArrayList<>();
         lore.add(ChatColor.AQUA + "" + ChatColor.ITALIC + "Transcendent");
-        lore.add(ChatColor.BLUE + "Frost: +10 Slow");
         meta.setLore(lore);
 
         // Set Modifiers
         meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, damageModifier);
-        meta.addAttributeModifier(Attribute.GENERIC_MOVEMENT_SPEED, frostModifier);
+        // meta.addAttributeModifier(Attribute.GENERIC_MOVEMENT_SPEED, frostModifier);
         item.setItemMeta(meta);
         konstanzasRapier = item;
     }
@@ -88,6 +86,10 @@ public class Weapons {
         // Attributes
         AttributeModifier blockModifier = new AttributeModifier(UUID.randomUUID(), "generic.blockChance",
                 10, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.OFF_HAND);
+        AttributeModifier toughnessModifier = new AttributeModifier(UUID.randomUUID(), "generic.tough",
+                4, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.OFF_HAND);
+        AttributeModifier kbModifier = new AttributeModifier(UUID.randomUUID(), "generic.kb",
+                0.5, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.OFF_HAND);
 
         ItemMeta meta = item.getItemMeta();
 
@@ -100,6 +102,8 @@ public class Weapons {
 
         // Set Modifiers
         meta.addAttributeModifier(Attribute.GENERIC_ARMOR, blockModifier);
+        meta.addAttributeModifier(Attribute.GENERIC_ARMOR_TOUGHNESS, toughnessModifier);
+        meta.addAttributeModifier(Attribute.GENERIC_KNOCKBACK_RESISTANCE, kbModifier);
         item.setItemMeta(meta);
         fonteynesGreatShield = item;
     }
