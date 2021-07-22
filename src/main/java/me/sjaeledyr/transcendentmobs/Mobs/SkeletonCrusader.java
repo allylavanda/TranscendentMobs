@@ -33,7 +33,8 @@ public class SkeletonCrusader {
             //Particle Effects
             world.spawnParticle(Particle.EXPLOSION_HUGE, skeleton.getLocation(), 1);
 
-            skeleton.getEquipment().setItemInMainHand(Weapons.testWeapon);
+            skeleton.getEquipment().setItemInMainHand(Weapons.konstanzasRapier);
+            skeleton.getEquipment().setItemInOffHand(Weapons.fonteynesGreatShield);
             skeleton.getEquipment().setHelmet(new ItemStack(Material.GOLDEN_HELMET));
             skeleton.getEquipment().setChestplate(new ItemStack(Material.GOLDEN_CHESTPLATE));
             skeleton.getEquipment().setLeggings(new ItemStack(Material.GOLDEN_LEGGINGS));
@@ -41,6 +42,7 @@ public class SkeletonCrusader {
 
             // Loot
             skeleton.getEquipment().setItemInMainHandDropChance(100);
+            skeleton.getEquipment().setItemInOffHandDropChance(100);
             kc.resetKillsSkeleton(p);
         }
     }
