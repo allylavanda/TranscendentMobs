@@ -8,6 +8,7 @@ import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -16,11 +17,13 @@ public class Weapons {
     // Weapon List
     public static ItemStack testWeapon;
     public static ItemStack warriorsAxe;
+    public static ItemStack konstanzasRapier;
 
     public static void init() {
         createTestWeapon();
         createWarriorsAxe();
     }
+    // DEBUG WEAPONS
     public static void createTestWeapon() {
         ItemStack item = new ItemStack(Material.DIAMOND_AXE);
         // Attributes
@@ -28,7 +31,7 @@ public class Weapons {
                 100, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND);
 
         ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName("This Is Gonna Hurt");
+        meta.setDisplayName(ChatColor.GOLD + "" + ChatColor.BOLD + "This Is Gonna Hurt");
         List<String> lore = new ArrayList<>();
         lore.add("This is a weapon to test the plugin's");
         lore.add("functionality / for debugging");
@@ -54,6 +57,26 @@ public class Weapons {
         meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, modifier);
         item.setItemMeta(meta);
         warriorsAxe = item;
+    }
 
+    // TRANSCENDENT WEAPONS
+    public static void createKonstanzasRapier() {
+        ItemStack item = new ItemStack(Material.DIAMOND_SWORD);
+        // Attributes
+        AttributeModifier modifier = new AttributeModifier(UUID.randomUUID(), "generic.attackDamage",
+                10, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND);
+
+        ItemMeta meta = item.getItemMeta();
+        // Lore
+        meta.setDisplayName(ChatColor.GOLD + "" + ChatColor.BOLD + "Konstanza's Rapier");
+        List<String> lore = new ArrayList<>();
+        lore.add(ChatColor.AQUA + "" + ChatColor.ITALIC + "Transcendent Weapon");
+        lore.add("TBD");
+        meta.setLore(lore);
+
+        // Set Modifiers
+        meta.addAttributeModifier(Attribute.GENERIC_ATTACK_DAMAGE, modifier);
+        item.setItemMeta(meta);
+        konstanzasRapier = item;
     }
 }
