@@ -41,16 +41,4 @@ public class Main extends JavaPlugin {
         System.out.println("[TranscendentMobs] TranscendentMobs has been disabled!");
         config = null;
     }
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
-    {
-        Player p = (Player) sender;
-        if (label.equalsIgnoreCase("augment")) {
-            if (!(sender instanceof Player)) {
-                sender.sendMessage("You cannot do this!");
-                return true;
-            }
-        }
-        aGUI.createInv(p);
-        return true;
-    }
 }
