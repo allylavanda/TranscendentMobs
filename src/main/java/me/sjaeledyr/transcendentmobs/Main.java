@@ -14,7 +14,6 @@ public class Main extends JavaPlugin {
     public static FileConfiguration config;
     private final Weapons weapons = new Weapons();
     private final Armor armor = new Armor();
-    private final AugmentGUI aGUI = new AugmentGUI();
 
     @Override
     public final void onEnable()
