@@ -5,3 +5,9 @@ api-version: 1.16
 authors: [ Sjaeledyr ]
 description: Spiritual successor to Hepolite's MalevolentMobs
 website: https://github.com/sjaeledyr
+
+commands:
+    augment:
+        description: Augments currently wielded weapon if augmentable
+        usage: /<command>
+        permission: transcendentmobs.augment
