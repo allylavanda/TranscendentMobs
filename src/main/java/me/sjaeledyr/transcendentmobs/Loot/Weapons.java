@@ -18,19 +18,18 @@ public class Weapons {
     public static ItemStack konstanzasRapier;
     public static ItemStack fonteynesGreatShield;
 
-    public static void init() {
+    public final void init() {
         createTestWeapon();
         createWarriorsAxe();
         createKonstanzasRapier();
         createFonteynesGreatShield();
     }
     // DEBUG WEAPONS
-    public static void createTestWeapon() {
+    private void createTestWeapon() {
         ItemStack item = new ItemStack(Material.DIAMOND_AXE);
         // Attributes
         AttributeModifier modifier = new AttributeModifier(UUID.randomUUID(), "generic.attackDamage",
                 100, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND);
-
         ItemMeta meta = item.getItemMeta();
         meta.setDisplayName(ChatColor.GOLD + "" + ChatColor.BOLD + "This Is Gonna Hurt");
         List<String> lore = new ArrayList<>();
@@ -42,7 +41,7 @@ public class Weapons {
         item.setItemMeta(meta);
         testWeapon = item;
     }
-    public static void createWarriorsAxe() {
+    private void createWarriorsAxe() {
         ItemStack item = new ItemStack(Material.IRON_AXE);
         // Attributes
         AttributeModifier modifier = new AttributeModifier(UUID.randomUUID(),"generic.attackDamage",
@@ -60,7 +59,7 @@ public class Weapons {
         warriorsAxe = item;
     }
     // TRANSCENDENT WEAPONS
-    public static void createKonstanzasRapier() {
+    private void createKonstanzasRapier() {
         ItemStack item = new ItemStack(Material.DIAMOND_SWORD);
         // Attributes
         AttributeModifier damageModifier = new AttributeModifier(UUID.randomUUID(), "generic.attackDamage",
@@ -81,7 +80,7 @@ public class Weapons {
         item.setItemMeta(meta);
         konstanzasRapier = item;
     }
-    public static void createFonteynesGreatShield() {
+    private void createFonteynesGreatShield() {
         ItemStack item = new ItemStack(Material.SHIELD);
         // Attributes
         AttributeModifier blockModifier = new AttributeModifier(UUID.randomUUID(), "generic.blockChance",

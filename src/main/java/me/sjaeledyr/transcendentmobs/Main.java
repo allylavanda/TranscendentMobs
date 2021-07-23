@@ -8,13 +8,16 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
     public static FileConfiguration config;
+    private final Weapons weapons = new Weapons();
+    private final Armor armor = new Armor();
+
     @Override
-    public void onEnable() {
+    public final void onEnable() {
         config=getConfig();
         this.saveDefaultConfig();
         // Plugin startup logic
-        Weapons.init();
-        Armor.init();
+        weapons.init();
+        armor.init();
         System.out.println("[TranscendentMobs] TranscendentMobs by Sjaeledyr has been Loaded! ");
         System.out.println("[TranscendentMobs] Plugin Version 1.0");
 
