@@ -4,10 +4,7 @@ import me.sjaeledyr.transcendentmobs.Loot.Armor;
 import me.sjaeledyr.transcendentmobs.Loot.Weapons;
 import me.sjaeledyr.transcendentmobs.util.AugmentGUI;
 import me.sjaeledyr.transcendentmobs.util.EventListener;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
