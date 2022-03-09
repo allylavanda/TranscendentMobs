@@ -1,0 +1,5 @@
+name: TranscendentMobs
+version: '1.1-SNAPSHOT'
+main: me.sjaeledyr.transcendentmobs.Main
+api-version: 1.18
+description: Spiritual Successor to Hepolite's MalevolentMobs
